@@ -7,16 +7,6 @@ function src(subdir) {
 }
 
 module.exports = {
-  resolve: {
-    alias: {
-      components: src("components"),
-      styles: src("styles"),
-      tests: src("tests"),
-      utils: src("utils"),
-      views: src("views"),
-    },
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
-  },
   devtool: prod ? undefined : "source-map",
   entry: "./src/index.tsx",
   mode: prod ? "production" : "development",
@@ -42,8 +32,19 @@ module.exports = {
         use: [
           "style-loader",
           "css-loader",
-          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                precision: 3,
+              },
+            },
+          },
         ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ]
   },
@@ -55,4 +56,14 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
+  resolve: {
+    alias: {
+      components: src("components"),
+      imgs: src("imgs"),
+      styles: src("styles"),
+      utils: src("utils"),
+      views: src("views"),
+    },
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+  },
 };

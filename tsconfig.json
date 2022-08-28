@@ -22,6 +22,7 @@
     "outDir": "dist",
     "paths": {
       "components/*": [ "components/*" ],
+      "imgs/*": ["imgs/*"],
       "styles/*": [ "styles/*" ],
       "utils/*": [ "utils/*" ],
       "views/*": [ "views/*" ],
@@ -35,7 +36,7 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "target": "ES6",
+    "target": "ES5",
   },
   "include": ["src"],
 }
