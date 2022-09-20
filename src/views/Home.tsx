@@ -1,12 +1,14 @@
-import ExampleComponent from "components/ExampleComponent";
-import type {FC} from "react";
+import type { FC } from "react";
 import React from "react";
+
+import { ComponentA, ComponentB } from "components";
 
 const Home: FC = (): JSX.Element => (
   <div>
-    <h1>Welcome to this template</h1>
-    <ExampleComponent />
+    <h1 id="someid" className="someClass">{"Welcome to this template"}</h1>
+    <ComponentA />
+    <ComponentB />
   </div>
 );
 
-export default Home;
+export { Home };
