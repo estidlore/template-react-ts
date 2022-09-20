@@ -92,9 +92,49 @@ module.exports = {
     "@typescript-eslint/promise-function-async": "error",
     "@typescript-eslint/type-annotation-spacing": "error",
     "@typescript-eslint/unified-signatures": "error",
+    "no-restricted-syntax": [
+      "error",
+      "ExportDefaultDeclaration",
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInObjects": true,
+        "objectsInObjects": true,
+      },
+    ],
+    "react/jsx-indent": [
+      "error",
+      2,
+      {
+        "checkAttributes": true,
+        "indentLogicalExpressions": true,
+      }
+    ],
+    "react/jsx-indent-props": ["error", 2],
+    "react/jsx-max-depth": [
+      "error", {
+        "max": 5,
+      },
+    ],
+    "react/jsx-no-literals": "error",
+    "react/jsx-one-expression-per-line": [
+      "error",
+      {
+        "allow": "single-child",
+      },
+    ],
     "react/jsx-sort-props": "error",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "react/no-children-prop": "error",
+    "react/jsx-no-useless-fragment": [
+      "error",
+      {
+        "allowExpressions": "true",
+      }
+    ],
     "react/react-in-jsx-scope": "error",
     "simple-import-sort/imports": [
       "error",
