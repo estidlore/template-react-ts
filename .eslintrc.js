@@ -8,7 +8,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
   ],
   globals: {
     module: true,
@@ -26,7 +26,8 @@ module.exports = {
   plugins: [
     "@typescript-eslint",
     "prettier",
-    "react"
+    "react",
+    "simple-import-sort",
   ],
   root: true,
   rules: {
@@ -45,7 +46,17 @@ module.exports = {
     "@typescript-eslint/explicit-member-accessibility": "error",
     "@typescript-eslint/explicit-module-boundary-types": "error",
     "@typescript-eslint/member-delimiter-style": "error",
-    "@typescript-eslint/member-ordering": "error",
+    "@typescript-eslint/member-ordering": [
+      "error",
+      {
+        "default": [
+          "signature",
+          "field",
+          "constructor",
+          "method",
+        ],
+      },
+    ],
     "@typescript-eslint/method-signature-style": ["error", "property"],
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-duplicate-enum-values": "error",
@@ -81,9 +92,42 @@ module.exports = {
     "@typescript-eslint/promise-function-async": "error",
     "@typescript-eslint/type-annotation-spacing": "error",
     "@typescript-eslint/unified-signatures": "error",
+    "react/jsx-sort-props": "error",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // Side effect imports
+          ["^\\u0000"],
+          // Node.js builtins
+          ["^node:"],
+          // External packages
+          ["^@?\\w"],
+          // Internal packages
+          ["^(components|imgs|styles|utils|views)"],
+          // Relative imports
+          ["^\\."],
+        ],
+      },
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+      },
+    ],
+    "sort-vars": [
+      "error",
+      {
+        "ignoreCase": true,
+      },
+    ],
   },
   settings: {
     "import/resolver": {
