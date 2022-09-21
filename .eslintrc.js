@@ -17,7 +17,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
-      "jsx": true
+      "jsx": true,
     },
     project: ["./tsconfig.json"],
     sourceType: "module",
@@ -92,6 +92,27 @@ module.exports = {
     "@typescript-eslint/promise-function-async": "error",
     "@typescript-eslint/type-annotation-spacing": "error",
     "@typescript-eslint/unified-signatures": "error",
+    "comma-spacing": [
+      "error",
+      {
+        "after": true,
+        "before": false,
+      },
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+      },
+    ],
+    "max-lines": [
+      "error",
+      {
+        "max": 200,
+        "skipBlankLines": false,
+        "skipComments": false,
+      },
+    ],
     "no-restricted-syntax": [
       "error",
       "ExportDefaultDeclaration",
@@ -110,7 +131,7 @@ module.exports = {
       {
         "checkAttributes": true,
         "indentLogicalExpressions": true,
-      }
+      },
     ],
     "react/jsx-indent-props": ["error", 2],
     "react/jsx-max-depth": [
@@ -129,11 +150,17 @@ module.exports = {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/no-children-prop": "error",
+    "react/no-multi-comp": [
+      "error",
+      {
+        "ignoreStateless": false,
+      },
+    ],
     "react/jsx-no-useless-fragment": [
       "error",
       {
-        "allowExpressions": "true",
-      }
+        "allowExpressions": true,
+      },
     ],
     "react/react-in-jsx-scope": "error",
     "simple-import-sort/imports": [
