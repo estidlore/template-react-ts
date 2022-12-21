@@ -5,7 +5,7 @@ import { ComponentA, ComponentB } from "components";
 
 const Home: FC = (): JSX.Element => (
   <div>
-    <h1>{"Welcome to this template"}</h1>
+    <h2>{"Welcome to this template"}</h2>
     <ComponentA />
     <ComponentB />
   </div>

@@ -35,9 +35,8 @@
   "scripts": {
     "babel": "%INIT_CWD%/node_modules/.bin/babel.cmd ./src/index.tsx -o ./dist/bundle.js",
     "build": "NODE_ENV=production webpack",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
-    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
-    "pretty": "prettier --config .prettierrc 'src/**/*.{ts,tsx}' --write",
+    "format": "prettier --config .prettierrc --write src/**/*.{ts,tsx,scss}",
+    "lint": "eslint --ext .ts,.tsx src --fix",
     "start": "webpack serve --port 3000"
   },
   "version": "1.0.0"

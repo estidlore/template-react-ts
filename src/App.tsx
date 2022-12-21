@@ -4,7 +4,10 @@ import React from "react";
 import { Home } from "views";
 
 const App: FC = (): JSX.Element => (
-  <Home />
+  <div>
+    <h1>{"Template React TS SASS"}</h1>
+    <Home />
+  </div>
 );
 
 export { App };
