@@ -86,7 +86,6 @@ module.exports = {
     "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-readonly": "error",
-    "@typescript-eslint/prefer-readonly-parameter-types": "error",
     "@typescript-eslint/prefer-reduce-type-parameter": "error",
     "@typescript-eslint/prefer-regexp-exec": "error",
     "@typescript-eslint/promise-function-async": "error",
@@ -99,6 +98,7 @@ module.exports = {
         "before": false,
       },
     ],
+    "indent": ["error", 2],
     "max-len": [
       "error",
       {
@@ -124,6 +124,13 @@ module.exports = {
         "arraysInObjects": true,
         "objectsInObjects": true,
       },
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        children: "always",
+        props: "always"
+      }
     ],
     "react/jsx-indent": [
       "error",
@@ -174,7 +181,7 @@ module.exports = {
           // External packages
           ["^@?\\w"],
           // Internal packages
-          ["^(components|imgs|styles|utils|views)"],
+          ["^(assets|components|styles|types|utils|views)"],
           // Relative imports
           ["^\\."],
         ],
@@ -189,6 +196,7 @@ module.exports = {
         "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
       },
     ],
+    "sort-keys": ["error", "asc"],
     "sort-vars": [
       "error",
       {
