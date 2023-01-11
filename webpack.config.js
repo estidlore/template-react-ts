@@ -60,7 +60,6 @@ module.exports = {
     alias: {
       assets: src("assets"),
       components: src("components"),
-      styles: src("styles"),
       types: src("types"),
       utils: src("utils"),
       views: src("views"),

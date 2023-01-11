@@ -181,7 +181,7 @@ module.exports = {
           // External packages
           ["^@?\\w"],
           // Internal packages
-          ["^(assets|components|styles|types|utils|views)"],
+          ["^(assets|components|types|utils|views)"],
           // Relative imports
           ["^\\."],
         ],
