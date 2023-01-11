@@ -20,13 +20,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": true,
     "outDir": "dist",
-    "paths": {
-      "assets/*": ["assets/*"],
-      "components/*": [ "components/*" ],
-      "styles/*": [ "styles/*" ],
-      "utils/*": [ "utils/*" ],
-      "views/*": [ "views/*" ],
-    },
     "removeComments": true,
     "resolveJsonModule": true,
     "rootDir": "src",
