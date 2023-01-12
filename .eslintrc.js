@@ -2,6 +2,7 @@ module.exports = {
   env: {
     amd: true,
     browser: true,
+    jest: true,
     node: true,
   },
   extends: [
