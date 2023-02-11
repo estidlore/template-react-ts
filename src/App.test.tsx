@@ -5,6 +5,7 @@ import { App } from "./App";
 
 describe("App", () => {
   it("Display the header", () => {
+    expect.assertions(1);
     render(<App />);
     expect(screen.getByText("Template React TS SASS")).toBeInTheDocument();
   });
