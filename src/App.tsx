@@ -1,13 +1,7 @@
-import type { FC } from "react";
 import React from "react";
 
-import { Home } from "views/Home";
-
-const App: FC = (): JSX.Element => (
-  <div>
-    <h1>{"Template React TS SASS"}</h1>
-    <Home />
-  </div>
-);
+const App = (): JSX.Element => {
+  return <div>{"Template React TS SASS"}</div>;
+};
 
 export { App };
