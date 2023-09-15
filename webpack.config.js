@@ -13,19 +13,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         resolve: {
           extensions: [".ts", ".tsx"],
         },
-        use: "ts-loader",
+        use: {
+          loader: "ts-loader",
+          options: {
+            configFile: "tsconfig.prod.json",
+          },
+        },
       },
       {
         test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader",
-        ],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.scss$/,
@@ -44,9 +46,9 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
-    ]
+    ],
   },
   output: {
     path: __dirname + "/dist",
