@@ -1,23 +1,20 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
-const prod = process.env.NODE_ENV === "production";
 
 function src(subdir) {
   return path.join(__dirname, "src", subdir);
 }
 
-module.exports = {
-  devtool: prod ? undefined : "source-map",
+module.exports = ({ ENV = "development" }) => ({
+  devtool: ENV === "production" ? undefined : "source-map",
   entry: "./src/index.tsx",
-  mode: prod ? "production" : "development",
+  mode: ENV,
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        resolve: {
-          extensions: [".ts", ".tsx"],
-        },
         use: {
           loader: "ts-loader",
           options: {
@@ -50,7 +47,33 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+        parallel: true,
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
+      }),
+    ],
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: "all",
+          name: "vendors",
+          test: /[\\/]node_modules[\\/]/,
+        },
+      },
+      maxSize: 250000,
+    },
+  },
   output: {
+    filename: "[name].[contenthash].js",
     path: __dirname + "/dist",
   },
   plugins: [
@@ -68,4 +91,4 @@ module.exports = {
     },
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
-};
+});
