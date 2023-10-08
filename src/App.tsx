@@ -1,7 +1,7 @@
 import React from "react";
 
 const App = (): JSX.Element => {
-  return <div>{"Template React TS SASS"}</div>;
+  return <div className={"min-h-screen"}>{"react-template"}</div>;
 };
 
 export { App };

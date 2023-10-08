@@ -7,6 +7,6 @@ describe("App", () => {
   it("Display the header", () => {
     expect.assertions(1);
     render(<App />);
-    expect(screen.getByText("Template React TS SASS")).toBeInTheDocument();
+    expect(screen.getByText("react-template")).toBeInTheDocument();
   });
 });
